@@ -1,0 +1,99 @@
+ID: 3049435460117644
+Secret key: E8TP04SHMQJIjaljcirXwdvrM493SKNE
+User Id:268590414
+{site_id}:MLM (Esto es para Mexico, MLB para Brasil)
+
+Access Token:APP_USR-3049435460117644-112500-445a32c81abe8ca16e50f8ce596dde2a-458700815
+Obtener detalles de un ítem(ej:cafe serrano en mexico).
+https://api.mercadolibre.com/items/[{item_id}]  
+ej: https://api.mercadolibre.com/items/MLM562479258
+https://api.mercadolibre.com/items?ids=MLA723647586,MLM562479258
+
+Obtiene el árbol de categorías por sitio(ej: Mexico)
+ https://api.mercadolibre.com/sites/[{site_id}]/categories 
+ ej:  https://api.mercadolibre.com/sites/MLM/categories
+
+Dentro del json respuesta de café serrano, buscar category_id te lleva a
+https://api.mercadolibre.com/categories/MLM2354  
+
+Todos los articulos de esta categoria
+https://api.mercadolibre.com/sites/MLM/search?category=MLM2354
+https://api.mercadolibre.com/sites/MLM/search?nickname=IBUSHAK%20OFICIALES&limit=3
+
+  1.3 Visitas por artículo entre rangos de fecha
+         https://api.mercadolibre.com/items/visits?ids=[{item_id1,  item_id2}]&date_from=2018-01-26T00:00:00.000-00:00&date_to=2018-08-08T00:00:00.000-00:00
+    https://api.mercadolibre.com/items/visits?ids=MLM651052377,MLM681137369,MLM664498801,MLM664498801,MLM609041495,MLM703671599,MLM627841880&date_from=2019-01-26T00:00:00.000-00:00&date_to=2019-08-08T00:00:00.000-00:00 
+    https://api.mercadolibre.com/items/MLM562479258/visits/time_window?last=2&unit=day&ending=2019-09-18
+
+Visitas con fecha por usuario
+https://api.mercadolibre.com/users/{User_id}/items_visits/time_window?last={Last}&unit={Unit}&ending={Ending}
+https://api.mercadolibre.com/users/1000011398/items_visits/time_window?last=2&unit=day
+
+Visitas totales de un articulo
+https://api.mercadolibre.com/visits/items?ids=MLB9992242141
+
+1.4 Calcula los costos de envío y handling time
+  Calcula conforme a código postal (zip_code) y dimensiones del item (de mi colonia "copilco universidad" a colonia del viejo "fatima -C. Carmen")
+ ej :  https://api.mercadolibre.com/sites/MLM/shipping_options?zip_code_from=04360&zip_code_to=24110&dimensions=16x16x16,1500
+
+1.5 Tendencias por país "Las tendencias serán actualizadas todos los días"
+https://api.mercadolibre.com/trends/MLM
+
+1.6 Tendencias por país y por categoría
+https://api.mercadolibre.com/trends/{site_id}/{category_id}
+https://api.mercadolibre.com/trends/MLM/MLM160415 (cajas de direccion)
+
+1.7 Opiniones sobre un producto
+https://api.mercadolibre.com/reviews/item/MLA723647586
+
+1.8 Comisión por publicar
+
+Filtrar por precio y categoría
+https://api.mercadolibre.com/sites/MLA/listing_prices?price=5000&category_id=MLA1744
+
+Por categoría
+https://api.mercadolibre.com/sites/MLA/listing_prices?category_id=MLA1743
+
+2.1  Accede a los datos privados de tu aplicación
+
+https://api.mercadolibre.com/applications/{[app_id]}?access_token= {[ access_token  ]} 
+
+ 2.2  Obtener ítems de una consulta de búsqueda.
+https://api.mercadolibre.com/sites/[{Site_id}]/search?q=[{la palabra que quieras buscar}]&access_token={[access_token  ]} 
+https://api.mercadolibre.com/sites/MLM/search?q=ipod&access_token=APP_USR-3049435460117644-090415-aaf8690003815cd0e0af0e44885536d3-268590414 
+
+2.3 Direcciones del usuario
+https://api.mercadolibre.com/users/$USER_ID/addresses?access_token=$ACCESS_TOKEN
+
+Preguntas totales
+
+Por artículo
+https://api.mercadolibre.com/items/{Item_id}/contacts/questions?date_from={Date_from}&date_to={Date_to}
+
+Por usuario
+https://api.mercadolibre.com/users/{User_id}/contacts/questions?date_from={Date_from}&date_to={Date_to}
+https://api.mercadolibre.com/items/MLV421672596/contacts/questions?date_from=2014-08-01T00:00:00.000-03:00&date_to=2014-08-02T23:59:59.999
+
+3 catalogos
+
+3.1  productos que están asociados a un dominio
+/catalog_domains/<domains_id>/products.
+https://api.mercadolibre.com/catalog_domains/MLM-WELDING_MACHINES/products#json
+
+3.2 producto de catalogo
+https://api.mercadolibre.com/products/MLM15290834
+
+3.3
+https://api.mercadolibre.com/products/search?status=active&site_id=MLM&q=Samsung%20Galaxy%20S8&domain_id=MLM-CELLPHONES
+
+Test_user 23/12/2019
+
+"id":506028788,
+"nickname":"TESTE6L0NY5W",
+"password":"qatest5528",
+"site_status":"active",
+"email":test_user_69513766@testuser.com
+
+cafesventa_user 25/10/2019
+contraseña:HQUKeS-USPjb9g9
+E-mail:manolitobotlama@gmail.com
